@@ -1,3 +1,174 @@
-.hide{
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content{
+    flex: 1 0 auto;
+}
+
+.container {
+    max-width: 1140px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 15px;
+}
+
+@media(max-width: 1200px) {
+    .container {
+        max-width: 970px;
+    }
+
+}
+
+@media(max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+
+}
+
+@media(max-width: 767px) {
+    .container {
+        max-width: none;
+    }
+
+}
+
+.hide {
     display: none;
 }
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-right-style: initial;
+    border-bottom-style: initial;
+    border-left-style: initial;
+    border-right-color: initial;
+    border-bottom-color: initial;
+    border-left-color: initial;
+    border-width: 1px 0px 0px;
+    border-image: initial;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.button-wrapper-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* ============== блок btn-primary ================*/
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-primary:active {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #005cbf;
+}
+
+.btn-primary:focus {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    box-shadow: 0 0 0 0.2rem rgba(38,143,255,.5);
+}
+
+/* ============== блок btn-primary ================*/
+
+
+/* ================ блок input================= */
+.input {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* ================ блок input================= */
+
+
+/* ================== блок alert ======================== */
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    border-radius: 0.25rem;
+}
+
+.alert_success {
+    color: rgb(21, 87, 36);
+    background-color: rgb(212, 237, 218);
+    border-color: rgb(195, 230, 203);
+}
+
+.alert_danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert_primary {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+
+.alert_success hr {
+    border-top-color: rgb(177, 223, 187);
+}
+
+/* ================== блок alert ======================== */

@@ -1,0 +1,40 @@
+.note {
+    padding: 63px 20px 20px 20px;
+}
+
+.note__form {
+
+}
+
+.note__label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.note__input {
+    margin-bottom: 15px;
+}
+
+
+
+
+
+.note__show-container {
+    margin-bottom: 1rem;
+}
+
+.note__show-hash {
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 6px;
+
+}
+
+.note__show-text {
+
+}
+
+.note__show-warning {
+
+}
+

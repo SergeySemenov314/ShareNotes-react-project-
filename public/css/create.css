@@ -1,0 +1,26 @@
+.create {
+    padding: 60px 20px 20px 20px;
+}
+
+.create__label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.create__textarea {
+    height: auto;
+    font-size: 16px;
+
+}
+
+.create__length-warning {
+    margin-bottom: 16px;
+}
+
+.create__url {
+    margin-bottom: 16px;
+}
+
+.create__url-warning {
+    margin-bottom: 16px;
+}

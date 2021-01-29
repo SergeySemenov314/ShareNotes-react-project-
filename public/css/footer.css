@@ -1,0 +1,14 @@
+.footer-bg {
+    background-color: #343a40;
+    flex-shrink: 0;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0;
+
+}
+.footer__link {
+
+}

@@ -20,7 +20,6 @@ function Note() {
       })
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         if (response.result) {
           setNoteText(response.note);
           setLineClass('');
@@ -32,6 +31,7 @@ function Note() {
           setErrorClass('');
         }
       })
+      
     } else {
       setLineClass('hide');
       setFormClass('');
@@ -48,32 +48,69 @@ function Note() {
       return false;
     }
     noteURL = url;
-    window.location.href = env.url + url;
+    // window.location.href = env.url + url;
+
+    fetch(env.urlBackend, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify({'url' : noteURL})
+    })
+    .then(response => response.json())
+    .then(response => {
+      if (response.result) {
+        setNoteText(response.note);
+        setLineClass('');
+        setFormClass('hide');
+        setErrorClass('hide');
+      } else if (!response.result){
+        setLineClass('hide');
+        setFormClass('hide');
+        setErrorClass('');
+      }
+    })
+
+    evt.target.elements.url.value = '';
 
   }
 
   function searchNote() {
-    window.location.href = env.url;
+    // window.location.href = env.url;
+    setLineClass('hide');
+    setFormClass('');
+    setErrorClass('hide');
   }
 
     return (
-      <div>
-        <div className = {lineClass}>
-          <h4>Заметка:</h4> 
-          <p>{noteText}</p>
-          <button onClick = {searchNote}>Посмотреть еще одну заметку</button>
-        </div>
-        <div className={errorClass}>
-          <p>Произошла ошибка. Такая заметка не найдена.</p>
-        </div>
-        <div className = {formClass }>
-          <form action="" onSubmit = {getNote}>
-            <label htmlFor="">Введите hash заметки</label>
-            <input type="text" name = 'url' id = 'url' className = 'form-control'/>
-            <button className = 'btn btn-primary'>Искать заметку</button>
-          </form>
-        </div>
-      </div>
+      <div className = 'container'>
+        <div className="note">
+            <div className = {formClass}>
+                <form action="" onSubmit = {getNote} className = 'note__form'>
+                  <label htmlFor="url" className = 'note__label'>Введите hash заметки</label>
+                  <input type="text" name = 'url' id = 'url' className = 'note__input input'/>
+                  <div className="button-wrapper-right">
+                    <button className = 'btn-primary'>Искать заметку</button>
+                  </div>       
+                </form>
+            </div>
+            <div className = {lineClass}>
+              <div className="note__show-container alert alert_success">
+                <h4 className = 'note__show-hash'>Заметка: {noteURL}</h4> 
+                <p className = 'note__show-text'>Текст заметки: {noteText}</p>
+                <hr/>
+                <p className = 'note__show-warning'>Внимание! Скопируйте заметку. После показа заметка будет удалена!</p>
+              </div>  
+              <div className="button-wrapper-right">
+                <button onClick = {searchNote} className = 'btn-primary'>Посмотреть еще одну заметку</button>
+              </div>                
+            </div>
+            <div className={errorClass}>
+              <p className = 'alert alert_danger'>Произошла ошибка. Такая заметка не найдена.</p>
+            </div>     
+        </div>  
+      </div> 
+   
     );
 }
   
