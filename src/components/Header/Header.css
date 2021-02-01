@@ -1,0 +1,240 @@
+.header-bg {
+    background-color: #343a40;
+}
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+.header__logo {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 18px;
+
+}
+
+.header__logo:hover{
+    color: #fff;
+}
+
+.header__nav {
+
+}
+.header__nav-list {
+    display: flex;
+
+}
+
+.header__nav-item {
+    margin-right: 22px;
+}
+
+.header__nav-item:last-child {
+    margin-right: 0;
+}
+
+.header__nav-link {
+    color:rgba(255,255,255,.5);
+    font-size: 15px;
+
+}
+
+.header__nav-link:hover {
+    color: rgba(255,255,255,.75);
+}
+
+.header__nav-link.active {
+    color: white;
+}
+
+@media(max-width: 767px) {
+    .header {
+        justify-content: space-between;
+
+    }
+
+    .header__nav {
+        display: none;
+    }
+	
+}
+
+@media(max-width: 359px) {
+    
+}
+
+
+/*----------------Кнопка для мобильной навигации-----------------  */
+
+
+
+.menu-icon {
+    display: none;
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 11;
+}
+
+
+.menu-icon__line {
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+}
+
+.menu-icon__line::before {
+    position: absolute;
+    left: 0;
+    top: -10px;
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color:white;
+    -webkit-transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
+    transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
+
+}
+
+.menu-icon__line::after {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    -webkit-transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
+    transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
+
+}
+
+.menu-icon.menu-icon_active .menu-icon__line {
+    background-color: transparent;
+}
+
+.menu-icon.menu-icon_active .menu-icon__line::before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0;
+    background-color: white;
+    -webkit-transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
+    transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s, -webkit-transform 0.2s ease-in 0.2s;
+}
+
+.menu-icon.menu-icon_active .menu-icon__line::after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 0;
+    background-color: white;
+    -webkit-transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
+    transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s, -webkit-transform 0.2s ease-in 0.2s;
+}
+
+
+/* --------------------мобильная навигация------------------------ */
+
+
+.mobile-nav {
+    display: block;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 10;
+    right: -350px;
+    top: 0;
+    height: 100vh;
+    width: 350px;
+    background-color:#2e2e2e;
+    padding: 50px;
+    -webkit-transition: -webkit-transform 0.4s ease-in;
+    transition: -webkit-transform 0.4s ease-in;
+    transition: transform 0.4s ease-in;
+    transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
+}
+
+
+.mobile-nav_active {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+
+.mobile-nav__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-nav__item {
+    margin-bottom: 30px;
+}
+
+
+
+.mobile-nav__link {
+    color: rgba(255,255,255,.5);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.mobile-nav__link:hover {
+    color:  rgba(255,255,255,.75);
+}
+
+.mobile-nav__link.active {
+    color: white;
+}
+
+
+
+/*----------------Кнопка для мобильной навигации media-----------------  */
+@media(max-width: 1025px) {
+    .menu-icon {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+                align-items: center;
+    }
+}
+
+
+/* --------------------мобильная навигация------------------------ */
+
+
+@media(min-width:319px) and (max-width: 766px) {
+    .mobile-nav__item {
+        margin-bottom: 24px;
+
+
+
+    }
+
+
+
+}
+
+/* --------------------мобильная навигация media------------------------ */
+@media(max-width: 768px) {
+    .mobile-nav {
+        width: 320px;
+        right: -320px;
+
+    }
+}
+

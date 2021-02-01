@@ -1,0 +1,9 @@
+.error {
+    padding-top: 50px;
+}
+
+.error__p {
+    text-align: center;
+    color: white;
+    background-color: #007bff;
+}

@@ -24,3 +24,23 @@
 .create__url-warning {
     margin-bottom: 16px;
 }
+
+@media(max-width: 767px) {
+    
+    .create {
+        padding-top: 41px;
+    }
+
+    .create__url {
+        font-size: 12px;
+        padding-right: 4px;
+        padding-left: 4px;
+    }
+	
+}
+
+@media(max-width: 359px) {
+    
+}
+
+

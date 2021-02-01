@@ -1,6 +1,7 @@
+import './Note.css';
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
-import env from '../env.json';  
+import env from '../../env.json';  
 
 function Note() {
   let {noteURL} = useParams();
@@ -44,7 +45,7 @@ function Note() {
     let url = evt.target.elements.url.value;
     url = url.trim();
     if (url === ''){
-      alert('Заполните поле');
+      showWarning();
       return false;
     }
     noteURL = url;
@@ -76,10 +77,16 @@ function Note() {
   }
 
   function searchNote() {
-    // window.location.href = env.url;
     setLineClass('hide');
     setFormClass('');
     setErrorClass('hide');
+  }
+
+  function showWarning() {
+    let modal = document.querySelector('.modal');
+    let modalWarning = document.querySelector('.modal__warning');
+    modal.style.display = 'block';
+    modalWarning.style.display = 'block';
   }
 
     return (
@@ -106,7 +113,10 @@ function Note() {
               </div>                
             </div>
             <div className={errorClass}>
-              <p className = 'alert alert_danger'>Произошла ошибка. Такая заметка не найдена.</p>
+              <p className = 'note__notfound-warning alert alert_danger'>Произошла ошибка. Такая заметка не найдена.</p>
+              <div className="button-wrapper-right">
+                <button onClick = {searchNote} className = 'btn-primary'>Посмотреть еще одну заметку</button>
+              </div> 
             </div>     
         </div>  
       </div> 

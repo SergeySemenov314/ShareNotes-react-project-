@@ -16,9 +16,6 @@
 }
 
 
-
-
-
 .note__show-container {
     margin-bottom: 1rem;
 }
@@ -36,5 +33,22 @@
 
 .note__show-warning {
 
+}
+
+.note__notfound-warning {
+    margin-bottom: 16px;
+}
+
+
+@media(max-width: 767px) {
+
+  .note {
+      padding-top: 41px;
+  }
+	
+}
+
+@media(max-width: 359px) {
+    
 }
 

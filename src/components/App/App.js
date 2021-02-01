@@ -1,11 +1,16 @@
+import './reset.css';
+import './main.css';
+
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import About from './components/About';
-import Create from './components/Create';
-import Error from './components/Error';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Main from './components/Main';
-import Note from './components/Note';
+import About from '../About/About';
+import Create from '../Create/Create';
+import Error from '../Error/Error';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
+import Note from '../Note/Note';
+import Modals from '../Modals/Modals';
+
 
 function App() {
   return (
@@ -23,7 +28,9 @@ function App() {
           </Switch>
         </Router>
       </div>
-      <Footer />
+      <Footer />  
+      <Modals />
+      
    </>
   );
 }

@@ -34,3 +34,29 @@
     list-style: initial;
 
 }
+
+@media(max-width: 767px) {
+
+    .main {
+        margin-bottom: 45px;
+    }
+
+    .main__buttons-container{
+         justify-content: center;
+         flex-wrap: wrap;
+    }
+
+    .main__button {
+        width: 176px;
+        margin: 0 10px 20px 10px;
+    }
+
+    .main__buttons-container {
+        padding: 44px 0 37px;
+    }
+	
+}
+
+@media(max-width: 359px) {
+    
+}
